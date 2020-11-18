@@ -132,7 +132,7 @@
             <div class="container-fluid">
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Companies</h3>
+                        <h3 class="text-themecolor">employees</h3>
                     </div>
                 </div>
                 <div class="row">
@@ -145,7 +145,7 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Company Name</th>
+                                                <th>employee Name</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -160,11 +160,11 @@
                                                 foreach ($data as $key => $value) {
                                                     echo 
                                                     '<tr>
-                                                        <td>'.$value['company_id'].'</td>
-                                                        <td>'.$value['company_name'].'</td>
+                                                        <td>'.$value['employee_id'].'</td>
+                                                        <td>'.$value['employee_name'].'</td>
                                                         <td>
-                                                            <a class="btn btn-info btn-sm" href="companies/update/'.$value['company_id'].'">Update</a>
-                                                            <a class="btn btn-danger btn-sm " href="companies/delete_process/'.$value['company_id'].'">Delete</a>
+                                                            <a class="btn btn-info btn-sm" href="employees/update/'.$value['employee_id'].'">Update</a>
+                                                            <a class="btn btn-danger btn-sm " href="employees/delete_process/'.$value['employee_id'].'">Delete</a>
                                                         </td>
                                                     </tr>
                                                     ';

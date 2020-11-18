@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url(); ?>/assets/images/favicon.png">
-    <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
+    <title>Employee Management</title>
 	<link rel="canonical" href="https://www.wrappixel.com/templates/adminwrap/" />
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>/assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Admin Wrap</p>
+            <p class="loader__label">Employee Management</p>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -78,24 +78,6 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                    </ul>
-                    <!-- ============================================================== -->
-                    <!-- User profile and search -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav my-lg-0">
-                        <!-- ============================================================== -->
-                        <!-- Profile -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <!-- <img src="<?php echo base_url(); ?>/assets/images/users/1.jpg" alt="user" class="" />  -->
-                                <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span> </a>
-                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
-                                <ul class="dropdown-user">
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
-                                </ul>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </nav>
@@ -150,7 +132,7 @@
             <div class="container-fluid">
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Companies</h3>
+                        <h3 class="text-themecolor">Departments</h3>
                     </div>
                 </div>
                 <div class="row">
@@ -163,7 +145,7 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Company Name</th>
+                                                <th>Department Name</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -178,11 +160,11 @@
                                                 foreach ($data as $key => $value) {
                                                     echo 
                                                     '<tr>
-                                                        <td>'.$value['company_id'].'</td>
-                                                        <td>'.$value['company_name'].'</td>
+                                                        <td>'.$value['department_id'].'</td>
+                                                        <td>'.$value['department_name'].'</td>
                                                         <td>
-                                                            <a class="btn btn-info btn-sm" href="companies/update/'.$value['company_id'].'">Update</a>
-                                                            <a class="btn btn-danger btn-sm " href="companies/delete_process/'.$value['company_id'].'">Delete</a>
+                                                            <a class="btn btn-info btn-sm" href="departments/update/'.$value['department_id'].'">Update</a>
+                                                            <a class="btn btn-danger btn-sm " href="departments/delete_process/'.$value['department_id'].'">Delete</a>
                                                         </td>
                                                     </tr>
                                                     ';

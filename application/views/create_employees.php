@@ -132,84 +132,26 @@
             <div class="container-fluid">
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Companies</h3>
+                        <h3 class="text-themecolor">Employees</h3>
                     </div>
                 </div>
+                
                 <div class="row">
-                    
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Company Name</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            
-                                            <?php
-
-                                                // echo '<pre>';
-                                                // print_r($data);
-                                                // echo '</pre>';
-                                                // exit();
-                                                foreach ($data as $key => $value) {
-                                                    echo 
-                                                    '<tr>
-                                                        <td>'.$value['company_id'].'</td>
-                                                        <td>'.$value['company_name'].'</td>
-                                                        <td>
-                                                            <a class="btn btn-info btn-sm" href="companies/update/'.$value['company_id'].'">Update</a>
-                                                            <a class="btn btn-danger btn-sm " href="companies/delete_process/'.$value['company_id'].'">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                    ';
-                                                }
-                                                ?>
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <h4 class="card-title">Create Employee</h4>
+                                <form class="mt-4" method="post" action="<?php echo base_url(); ?>employees/create_process">
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Employee Name</label>
+                                        <input required type="text" class="form-control" name="employee_name" id="exampleInputPassword1" placeholder="Employee name">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    
-                    <div class="col-12">
-                        <?php
-                            if($this->session->userdata('error')){
-                                echo '<div class="alert alert-danger">'.$this->session->userdata('error').'</div>';
-                                $this->session->unset_userdata('error');
-                            }
-                        ?>
-                    </div>
-                </div>
-                <div class="row">
-                    
-                    <div class="col-12">
-                        <?php
-                            if($this->session->userdata('success')){
-                                echo '<div class="alert alert-success">'.$this->session->userdata('success').'</div>';
-                                $this->session->unset_userdata('success');
-                            }
-                        ?>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->

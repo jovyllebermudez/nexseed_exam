@@ -1,54 +1,54 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Companies extends CI_Controller {
+class Employees extends CI_Controller {
 
 	public function index()
 	{   
-        $res=$this->db->select('*')->from('companies')->get()->result_array();
+        $res=$this->db->select('*')->from('employees')->get()->result_array();
         $pagedata = array('data' => $res);
-		$this->load->view('companies',$pagedata);
+		$this->load->view('employees',$pagedata);
 	}
 	public function create()
 	{   
-		$this->load->view('create_companies');
+		$this->load->view('create_employees');
 	}
 	public function create_process()
 	{   
         $data = array(
-            'company_name' => $this->input->post('company_name'),
+            'employee_name' => $this->input->post('employee_name'),
         );
-        $this->db->insert('companies', $data);
+        $this->db->insert('employees', $data);
         $user_data = array('success' => 'Success');
         $this->session->set_userdata($user_data);
-        redirect('companies');
+        redirect('employees');
 	}
 	public function update($id)
 	{   
-        $res=$this->db->select('*')->where('company_id',$id)->from('companies')->get()->result_array();
+        $res=$this->db->select('*')->where('employee_id',$id)->from('employees')->get()->result_array();
         if($res){
             $pagedata = array('data' => $res[0]);
-            $this->load->view('update_companies',$pagedata);
+            $this->load->view('update_employees',$pagedata);
         }else{
             $user_data = array('error' => 'Doesnt exist');
             $this->session->set_userdata($user_data);
-            redirect('companies');
+            redirect('employees');
         }
 	}
 	public function update_process($id)
 	{   
-        $this->db->set('company_name', $this->input->post('company_name'));
-        $this->db->where('company_id', $id);
-        $this->db->from('companies');
+        $this->db->set('employee_name', $this->input->post('employee_name'));
+        $this->db->where('employee_id', $id);
+        $this->db->from('employees');
         $this->db->update();
         
         $user_data = array('success' => 'Success');
         $this->session->set_userdata($user_data);
-        redirect('companies');
+        redirect('employees');
 	}
 	public function delete_process($id)
 	{   
-        $this->db->delete('companies', array('company_id' => $id));
-        redirect('companies');
+        $this->db->delete('employees', array('employee_id' => $id));
+        redirect('employees');
 	}
 }

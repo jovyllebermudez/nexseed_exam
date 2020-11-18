@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url(); ?>/assets/images/favicon.png">
-    <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
+    <title>Employee Management</title>
 	<link rel="canonical" href="https://www.wrappixel.com/templates/adminwrap/" />
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>/assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Admin Wrap</p>
+            <p class="loader__label">Employee Management</p>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -79,24 +79,6 @@
                         <!-- Search -->
                         <!-- ============================================================== -->
                     </ul>
-                    <!-- ============================================================== -->
-                    <!-- User profile and search -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav my-lg-0">
-                        <!-- ============================================================== -->
-                        <!-- Profile -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <!-- <img src="<?php echo base_url(); ?>/assets/images/users/1.jpg" alt="user" class="" />  -->
-                                <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span> </a>
-                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
-                                <ul class="dropdown-user">
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </nav>
         </header>
@@ -117,6 +99,18 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="<?php echo base_url('companies'); ?>">Retrieve</a></li>
                                 <li><a href="<?php echo base_url('companies/create'); ?>">Create</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Departments</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="<?php echo base_url('departments'); ?>">Retrieve</a></li>
+                                <li><a href="<?php echo base_url('departments/create'); ?>">Create</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-Car-Wheel"></i><span class="hide-menu">Employees</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="<?php echo base_url('employees'); ?>">Retrieve</a></li>
+                                <li><a href="<?php echo base_url('employees/create'); ?>">Create</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -150,7 +144,7 @@
                                 <form class="mt-4" method="post" action="<?php echo base_url(); ?>companies/create_process">
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Company Name</label>
-                                        <input type="text" class="form-control" name="company_name" id="exampleInputPassword1" placeholder="Company name">
+                                        <input required type="text" class="form-control" name="company_name" id="exampleInputPassword1" placeholder="Company name">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>

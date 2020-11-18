@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2020 at 05:05 AM
+-- Generation Time: Nov 18, 2020 at 07:10 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -53,6 +53,14 @@ CREATE TABLE `departments` (
   `company_id_fk` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `departments`
+--
+
+INSERT INTO `departments` (`department_id`, `department_name`, `company_id_fk`) VALUES
+(2, 'HR 2', 0),
+(3, 'IT department', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -61,8 +69,15 @@ CREATE TABLE `departments` (
 
 CREATE TABLE `employees` (
   `employee_id` int(11) NOT NULL,
-  `employee_name` int(11) NOT NULL
+  `employee_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`employee_id`, `employee_name`) VALUES
+(1, 'John Smith 2');
 
 -- --------------------------------------------------------
 
@@ -162,13 +177,13 @@ ALTER TABLE `companies`
 -- AUTO_INCREMENT for table `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `department_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `department_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `employee_department_assigns`
